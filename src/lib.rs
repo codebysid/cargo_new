@@ -15,3 +15,12 @@ pub fn create_directory(path: &str) {
         process::exit(1);
     })
 }
+
+pub fn get_directory_name(path: &str) -> String {
+    let path_parts: Vec<&str> = path.split("/").collect();
+
+    match path_parts.last() {
+        Some(dir_name) => (*dir_name).to_string(),
+        None => "No directory".to_string(),
+    }
+}

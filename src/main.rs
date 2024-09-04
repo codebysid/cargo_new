@@ -1,5 +1,6 @@
 use cargo_init::create_directory;
 use cargo_init::create_file;
+use cargo_init::get_directory_name;
 use std::env;
 
 fn main() {
@@ -30,7 +31,7 @@ edition = "2021"
 
 [dependencies]
 "#,
-                "dir_name"
+                get_directory_name(&project_path)
             ),
         );
 
